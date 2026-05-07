@@ -1,10 +1,9 @@
 import { a, useSpring } from "@react-spring/three";
-import { SectionTitle } from "../SectionTitle.jsx";
-import { BookCase } from "../BookCase.jsx";
-import { CouchSmall } from "../CouchSmall.jsx";
-import { Lamp } from "../Lamp.jsx";
-import { MeshDistortMaterial } from "@react-three/drei";
-import { SECTIONS_DISTANCE } from "../../assets/utils/common.js";
+import { SectionTitle } from "../components/SectionTitle.jsx";
+import { BookCase } from "../components/BookCase.jsx";
+import { CouchSmall } from "../components/CouchSmall.jsx";
+import { Lamp } from "../components/Lamp.jsx";
+import { SECTIONS_DISTANCE } from "../assets/utils/common.js";
 
 export const SkillsSection = ({ section }) => {
   const skillsSpring = useSpring({
@@ -34,7 +33,7 @@ export const SkillsSection = ({ section }) => {
         />
       </group>
 
-      <mesh position-y={2} position-z={-4} position-x={2}>
+      {/* <mesh position-y={2} position-z={-4} position-x={2}>
         <sphereGeometry args={[1, 64, 64]} />
         <MeshDistortMaterial
           opacity={0.8}
@@ -43,7 +42,7 @@ export const SkillsSection = ({ section }) => {
           speed={4.5}
           color="lightgray"
         />
-      </mesh>
+      </mesh>*/}
     </a.group>
   );
 };

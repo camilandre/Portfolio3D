@@ -1,10 +1,10 @@
-import { SECTIONS_DISTANCE } from "../../assets/utils/common.js";
-import { SectionTitle } from "../SectionTitle.jsx";
+import { SECTIONS_DISTANCE } from "../assets/utils/common.js";
+import { SectionTitle } from "../components/SectionTitle.jsx";
 import { a, useSpring } from "@react-spring/three";
-import { Balloon } from "../Balloon";
-import { Mailbox } from "../Mailbox";
-import { ParkBench } from "../ParkBench";
-import { Pigeon } from "../Pigeon";
+import { Balloon } from "../components/Balloon.jsx";
+import { Mailbox } from "../components/Mailbox.jsx";
+import { ParkBench } from "../components/ParkBench.jsx";
+import { Pigeon } from "../components/Pigeon.jsx";
 import { Float } from "@react-three/drei";
 
 export const ContactSection = ({ section }) => {

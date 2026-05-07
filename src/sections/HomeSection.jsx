@@ -1,10 +1,10 @@
 import { Center, Float } from "@react-three/drei";
 import { a, useSpring } from "@react-spring/three";
-import { SectionTitle } from "../SectionTitle.jsx";
-import { MacBookPro } from "../MacBookPro";
-import { PalmTree } from "../PalmTree.jsx";
-import { Star } from "../Star";
-import { config } from "../../config.js";
+import { SectionTitle } from "../components/SectionTitle.jsx";
+import { MacBookPro } from "../components/MacBookPro.jsx";
+import { PalmTree } from "../components/PalmTree.jsx";
+import { Star } from "../components/Star.jsx";
+import { config } from "../config.js";
 import * as THREE from "three";
 
 export const HomeSection = ({ section }) => {

@@ -1,11 +1,11 @@
 import { Environment, useScroll, ContactShadows } from "@react-three/drei";
 import { Avatar } from "./Avatar";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
-import { HomeSection } from "./sections/HomeSection.jsx";
-import { SkillsSection } from "./sections/SkillsSection.jsx";
-import { ProjectsSection } from "./sections/ProjectsSection.jsx";
-import { ContactSection } from "./sections/ContactSection..jsx";
+import { HomeSection } from "../sections/HomeSection.jsx";
+import { SkillsSection } from "../sections/SkillsSection.jsx";
+import { ProjectsSection } from "../sections/ProjectsSection.jsx";
+import { ContactSection } from "../sections/ContactSection..jsx";
 import { SECTIONS_DISTANCE } from "../assets/utils/common.js";
 import { config } from "../config.js";
 
@@ -28,6 +28,24 @@ export const Experience = () => {
     sceneContainer.current.position.z =
       -scrollData.offset * SECTIONS_DISTANCE * (scrollData.pages - 1);
   });
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const sectionIndex = config.sections.indexOf(
+        window.location.hash.replace("#", ""),
+      );
+      if (sectionIndex !== -1) {
+        scrollData.el.scrollTo(
+          0,
+          (sectionIndex / (config.sections.length - 1)) *
+            (scrollData.el.scrollHeight - scrollData.el.clientHeight),
+        );
+      }
+    };
+    window.addEventListener("hashchange", handleHashChange);
+    handleHashChange();
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   return (
     <>
